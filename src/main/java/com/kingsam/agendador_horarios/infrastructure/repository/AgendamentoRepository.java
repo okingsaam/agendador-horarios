@@ -1,6 +1,6 @@
-package com.kingsam.agendador_horarios.infrastrucutre.repository;
+package com.kingsam.agendador_horarios.infrastructure.repository;
 
-import com.kingsam.agendador_horarios.infrastrucutre.entity.AgendamentoEntity;
+import com.kingsam.agendador_horarios.infrastructure.entity.AgendamentoEntity;
 import jakarta.transaction.Transactional;
 import org.springframework.data.jpa.repository.JpaRepository;
 

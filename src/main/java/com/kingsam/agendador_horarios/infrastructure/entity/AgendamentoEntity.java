@@ -1,4 +1,4 @@
-package com.kingsam.agendador_horarios.infrastrucutre.entity;
+package com.kingsam.agendador_horarios.infrastructure.entity;
 
 
 import jakarta.persistence.*;

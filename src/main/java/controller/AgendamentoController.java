@@ -1,10 +1,9 @@
 package controller;
 
-import com.kingsam.agendador_horarios.infrastrucutre.entity.AgendamentoEntity;
+import com.kingsam.agendador_horarios.infrastructure.entity.AgendamentoEntity;
 import com.kingsam.agendador_horarios.service.AgendamentoService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.http.client.reactive.ClientHttpResponseDecorator;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -13,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 public class AgendamentoController {
     private final AgendamentoService agendamentoService;
 
-    @PatchMapping
+    @PostMapping
     public ResponseEntity<AgendamentoEntity> salvarAgedanebti(@RequestBody AgendamentoEntity agendamento) {
         return ResponseEntity.ok().body(agendamentoService.salvarAgendamento(agendamento));
     }

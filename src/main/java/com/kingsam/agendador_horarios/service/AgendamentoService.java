@@ -1,7 +1,7 @@
 package com.kingsam.agendador_horarios.service;
 
-import com.kingsam.agendador_horarios.infrastrucutre.entity.AgendamentoEntity;
-import com.kingsam.agendador_horarios.infrastrucutre.repository.AgendamentoRepository;
+import com.kingsam.agendador_horarios.infrastructure.entity.AgendamentoEntity;
+import com.kingsam.agendador_horarios.infrastructure.repository.AgendamentoRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
