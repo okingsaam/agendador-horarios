@@ -1,4 +1,4 @@
-package controller;
+package com.kingsam.agendador_horarios.controller;
 
 import com.kingsam.agendador_horarios.infrastructure.entity.AgendamentoEntity;
 import com.kingsam.agendador_horarios.service.AgendamentoService;
@@ -7,9 +7,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@RequestMapping("/agendamentos")
 @RequiredArgsConstructor
-
 public class AgendamentoController {
+
     private final AgendamentoService agendamentoService;
 
     @PostMapping
@@ -19,19 +20,31 @@ public class AgendamentoController {
 
     @DeleteMapping
     public ResponseEntity<Void> deletarAgendamento(@RequestBody AgendamentoEntity agendamento) {
-        agendamentoService.deletarAgendamento(agendamento.getDataHoraAgendamento(), agendamento.getCliente());
+        agendamentoService.deletarAgendamento(
+                agendamento.getDataHoraAgendamento(),
+                agendamento.getCliente()
+        );
         return ResponseEntity.noContent().build();
     }
 
     @GetMapping
     public ResponseEntity<AgendamentoEntity> buscarAgendamentoDia(@RequestBody AgendamentoEntity agendamento) {
-        return ResponseEntity.ok().body(agendamentoService.buscarAgentamentoDia(agendamento.getDataHoraAgendamento(), agendamento.getDataHoraAgendamento()));
+        return ResponseEntity.ok().body(
+                agendamentoService.buscarAgentamentoDia(
+                        agendamento.getDataHoraAgendamento(),
+                        agendamento.getDataHoraAgendamento()
+                )
+        );
     }
 
     @PutMapping
-    public ResponseEntity<AgendamentoEntity> alterarAgendamento(@RequestBody AgendamentoEntity agendamento)  {
-        return ResponseEntity.ok().body(agendamentoService.alterarAgendamento(agendamento, agendamento.getCliente(), agendamento.getDataHoraAgendamento()));
+    public ResponseEntity<AgendamentoEntity> alterarAgendamento(@RequestBody AgendamentoEntity agendamento) {
+        return ResponseEntity.ok().body(
+                agendamentoService.alterarAgendamento(
+                        agendamento,
+                        agendamento.getCliente(),
+                        agendamento.getDataHoraAgendamento()
+                )
+        );
     }
 }
-
-
