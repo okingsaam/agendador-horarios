@@ -19,6 +19,7 @@ import java.time.LocalDateTime;
 public class AgendamentoEntity {
 
 
+    public String getServicohoraAgendamento;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -28,4 +29,9 @@ public class AgendamentoEntity {
     private String cliente;
     private String telefoneCliente;
     private LocalDateTime dataInsercao = LocalDateTime.now();
-}
+
+    public void setid(Long id) {
+        this.id = id;
+    }
+    }
+
